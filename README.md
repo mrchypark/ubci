@@ -1,21 +1,26 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-ubci
-====
 
-The goal of ubci is to ...
+# ubci
 
-Installation
-------------
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/mrchypark/ubci.svg?branch=master)](https://travis-ci.org/mrchypark/ubci)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
 
-You can install the development version of ubci from [GitHub](https://github.com/mrchypark/ubci) with:
+The goal of ubci is to …
+
+## Installation
+
+You can install the development version of ubci from
+[GitHub](https://github.com/mrchypark/ubci) with:
 
 ``` r
 source("https://install-github.me/mrchypark/ubci")
 ```
 
-Example
--------
+## Example
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -23,7 +28,8 @@ This is a basic example which shows you how to solve a common problem:
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
 
 ``` r
 summary(cars)
@@ -36,12 +42,16 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date.
 
 You can also embed plots, for example:
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub\!
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.

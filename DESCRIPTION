@@ -10,3 +10,6 @@ ByteCompile: true
 URL: https://github.com/mrchypark/ubci
 BugReports: https://github.com/mrchypark/ubci/issues
 RoxygenNote: 6.0.1
+Imports: 
+    magrittr
+Roxygen: list(markdown = TRUE)

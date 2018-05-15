@@ -11,7 +11,7 @@ Installation
 You can install the development version of ubci from [GitHub](https://github.com/mrchypark/ubci) with:
 
 ``` r
-source("https://install-github.me/mrchypark/grprofile")
+source("https://install-github.me/mrchypark/ubci")
 ```
 
 Example

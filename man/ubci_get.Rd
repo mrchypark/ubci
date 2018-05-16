@@ -4,8 +4,13 @@
 \alias{ubci_get}
 \title{get ubci}
 \usage{
-ubci_get()
+ubci_get(index = "UBMI", count = 10000)
+}
+\arguments{
+\item{index}{default is UBMI.}
+
+\item{count}{default is 10000.}
 }
 \description{
-get ubci
+get ubci data.
 }

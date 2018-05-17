@@ -5,7 +5,7 @@ sudo: false
 cache: packages
 branches:
     only:
-        - source
+        - master
 
 r_github_packages:
     - r-lib/devtools

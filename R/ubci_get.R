@@ -25,5 +25,6 @@ ubci_get <- function(index = "UBMI", count = 10000) {
   dat$signedChangePrice[[nrow(dat)]]<-0
   dat <- tidyr::unnest(dat)
   dat <- tibble::tibble(dat)
+
   return(dat)
 }

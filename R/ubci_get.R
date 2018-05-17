@@ -7,7 +7,8 @@
 #'
 #' @export
 #' @importFrom httr GET content
-#' @importFrom tibble as_tibble
+#' @importFrom tidyr unnest
+#' @importFrom tibble tibble
 
 ubci_get <- function(index = "UBMI", count = 10000) {
   tar <-
@@ -18,8 +19,11 @@ ubci_get <- function(index = "UBMI", count = 10000) {
       count
     )
   res <- httr::GET(tar)
-  jsonReturn <- httr::content(res)
-  dat <- do.call(rbind, jsonReturn)
-  # dat <- data.frame(apply(dat, 2, unlist),stringsAsFactors = F)as
+  obj <- httr::content(res)
+  dat <- do.call(rbind, obj)
+  dat <- data.frame(dat)
+  dat$signedChangePrice[[nrow(dat)]]<-0
+  dat <- tidyr::unnest(dat)
+  dat <- tibble::tibble(dat)
   return(dat)
 }

@@ -8,7 +8,6 @@ branches:
         - master
 
 r_github_packages:
-    - r-lib/devtools
     - r-lib/pkgdown
 
 before_script:

@@ -3,3 +3,28 @@
 language: R
 sudo: false
 cache: packages
+branches:
+    only:
+        - source
+
+r_github_packages:
+    - r-lib/devtools
+    - r-lib/pkgdown
+
+before_script:
+    - Rscript -e 'devtools::document()'
+
+script:
+    - Rscript -e 'pkgdown::build_site()'
+
+deploy:
+    verbose: true
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_PAT
+    on:
+        branch: master
+    local_dir: docs
+    target_branch: master
+    edge:
+        branch: pages-ivar-set

@@ -88,7 +88,7 @@ ubci_index(loi$index[1])
 #> # A tibble: 230 x 6
 #>    index date        open  high   low close
 #>    <chr> <date>     <dbl> <dbl> <dbl> <dbl>
-#>  1 UBMI  2018-05-18 2199. 2201. 2140. 2168.
+#>  1 UBMI  2018-05-18 2199. 2201. 2140. 2174.
 #>  2 UBMI  2018-05-17 2281. 2317. 2177. 2200.
 #>  3 UBMI  2018-05-16 2319. 2330. 2183. 2281.
 #>  4 UBMI  2018-05-15 2419. 2439. 2301. 2317.
@@ -103,7 +103,7 @@ tail(ubci_index(loi$index[1], from="2018-05-15"))
 #> # A tibble: 4 x 6
 #>   index date        open  high   low close
 #>   <chr> <date>     <dbl> <dbl> <dbl> <dbl>
-#> 1 UBMI  2018-05-18 2199. 2201. 2140. 2168.
+#> 1 UBMI  2018-05-18 2199. 2201. 2140. 2174.
 #> 2 UBMI  2018-05-17 2281. 2317. 2177. 2200.
 #> 3 UBMI  2018-05-16 2319. 2330. 2183. 2281.
 #> 4 UBMI  2018-05-15 2419. 2439. 2301. 2317.
@@ -190,7 +190,7 @@ ubci_get(loc$code[1])
 #> # A tibble: 236 x 7
 #>    index   date            open      high      low     close volume
 #>    <chr>   <date>         <dbl>     <dbl>    <dbl>     <dbl>  <dbl>
-#>  1 KRW-BTC 2018-05-18  9072000.  9099000. 8881000.  8941000.  2917.
+#>  1 KRW-BTC 2018-05-18  9072000.  9099000. 8881000.  8961000.  2965.
 #>  2 KRW-BTC 2018-05-17  9297000.  9390000. 9020000.  9090000.  6922.
 #>  3 KRW-BTC 2018-05-16  9500000.  9542000. 9015000.  9297000. 12219.
 #>  4 KRW-BTC 2018-05-15  9802000.  9879000. 9458000.  9500000.  8326.
@@ -205,7 +205,7 @@ tail(ubci_get(loc$code[1], from="2018-05-15"))
 #> # A tibble: 4 x 7
 #>   index   date           open     high      low    close volume
 #>   <chr>   <date>        <dbl>    <dbl>    <dbl>    <dbl>  <dbl>
-#> 1 KRW-BTC 2018-05-18 9072000. 9099000. 8881000. 8941000.  2917.
+#> 1 KRW-BTC 2018-05-18 9072000. 9099000. 8881000. 8961000.  2965.
 #> 2 KRW-BTC 2018-05-17 9297000. 9390000. 9020000. 9090000.  6922.
 #> 3 KRW-BTC 2018-05-16 9500000. 9542000. 9015000. 9297000. 12219.
 #> 4 KRW-BTC 2018-05-15 9802000. 9879000. 9458000. 9500000.  8326.
@@ -255,7 +255,7 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] bindrcpp_0.2.2  ubci_0.0.0.9000
+#> [1] bindrcpp_0.2.2 ubci_0.0.1    
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] Rcpp_0.12.16     knitr_1.20       bindr_0.1.1      magrittr_1.5    
@@ -268,6 +268,12 @@ sessionInfo()
 #> [29] pillar_1.2.1     backports_1.1.2  jsonlite_1.5     lubridate_1.7.4 
 #> [33] pkgconfig_2.0.1
 ```
+
+Data source license is below.
+
+    “UBCI 인덱스”
+    Copyright 2018 두나무(주) All rights reserved.
+    Powered by 두나무/Upbit
 
 Please note that this project is released with a [Contributor Code of
 Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree

@@ -18,38 +18,87 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.org/mrchypark/ubci.svg?branch=master)](https://travis-ci.org/mrchypark/ubci)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
 
-The goal of ubci is to ...
+The goal of ubci is to get UBCI(UpBit Crypto Index) & Crypto price data form [upbit][upbit].
 
 ## Installation
 
 You can install the development version of ubci from [GitHub](https://github.com/mrchypark/ubci) with:
 
-``` r
+```{r message=FALSE}
 source("https://install-github.me/mrchypark/ubci")
 ```
+
+please check encoding UTF-8 for unix-like os.
+
+```{r}
+Sys.getlocale()
+```
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+### index options
 
-```{r example}
-## basic example code
+`ubci_index_options()` function return list of index code & descriptions.
+
+```{r}
+library(ubci)
+ubci_index_options()
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+`ubci_index_options()` function provide lang param for korean descriptions.
 
-```{r cars}
-summary(cars)
+```{r}
+ubci_index_options(lang="ko")
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
-You can also embed plots, for example:
+### index
 
-```{r pressure, echo = FALSE}
-plot(pressure)
+`ubci_index()` function return index data with code, range of date with from/to.
+
+```{r}
+loi<-ubci_index_options()
+loi$index[1]
+ubci_index(loi$index[1])
+tail(ubci_index(loi$index[1], from="2018-05-15"))
+ubci_index(loi$index[1], to="2018-05-15")
+ubci_index(loi$index[1], from="2018-05-10", to="2018-05-15")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+### crypto price options
+
+`ubci_get_options()` function return list of crypto code & name.
+
+```{r}
+ubci_get_options()
+```
+
+`ubci_get_options()` function provide lang param for korean name of crypto.
+
+```{r}
+ubci_get_options(lang="ko")
+```
+
+
+### crypto price
+
+`ubci_get()` function return crypto prcie data with code, range of date with from/to.
+
+```{r}
+loc<-ubci_get_options()
+loc$code[1]
+ubci_get(loc$code[1])
+tail(ubci_get(loc$code[1], from="2018-05-15"))
+ubci_get(loc$code[1], to="2018-05-15")
+ubci_get(loc$code[1], from="2018-05-10", to="2018-05-15")
+```
+
+Session info is below.
+```{r}
+sessionInfo()
+```
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 By participating in this project you agree to abide by its terms.
+
+[upbit]: https://www.ubcindex.com/home

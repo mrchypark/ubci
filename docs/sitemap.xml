@@ -4,9 +4,21 @@
     <loc>http://mrchypark.github.io/ubci/index.html</loc>
   </url>
   <url>
+    <loc>http://mrchypark.github.io/ubci/reference/pipe.html</loc>
+  </url>
+  <url>
     <loc>http://mrchypark.github.io/ubci/reference/ubci-package.html</loc>
   </url>
   <url>
     <loc>http://mrchypark.github.io/ubci/reference/ubci_get.html</loc>
+  </url>
+  <url>
+    <loc>http://mrchypark.github.io/ubci/reference/ubci_get_options.html</loc>
+  </url>
+  <url>
+    <loc>http://mrchypark.github.io/ubci/reference/ubci_index.html</loc>
+  </url>
+  <url>
+    <loc>http://mrchypark.github.io/ubci/reference/ubci_index_options.html</loc>
   </url>
 </urlset>

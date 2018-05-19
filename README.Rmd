@@ -15,8 +15,10 @@ knitr::opts_chunk$set(
 # ubci
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Travis build status](https://travis-ci.org/mrchypark/ubci.svg?branch=master)](https://travis-ci.org/mrchypark/ubci)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
+[![CRAN status](https://www.r-pkg.org/badges/version/ubci)](https://cran.r-project.org/package=ubci)
 
 The goal of ubci is to get UBCI(UpBit Crypto Index) & Crypto price data form [upbit][upbit].
 

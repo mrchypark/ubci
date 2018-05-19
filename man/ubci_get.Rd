@@ -4,10 +4,10 @@
 \alias{ubci_get}
 \title{get coin price}
 \usage{
-ubci_get(index, from, to)
+ubci_get(code, from, to)
 }
 \arguments{
-\item{index}{coin name fom ubci_get_options() link KRW-BTC.}
+\item{code}{coin name fom ubci_get_options() link "UPBIT.KRW-BTC".}
 
 \item{from}{Optional for various time series.
 A character string representing a start date in
@@ -17,6 +17,19 @@ YYYY-MM-DD format.}
 A character string representing an end date in
 YYYY-MM-DD format.}
 }
+\value{
+Return type is tibble has columes contain code, date, open, high, low, close, volume.
+}
 \description{
-get coin price data from source.
+get coin price data from source. Source is \href{https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC}{here}.
+}
+\examples{
+\dontrun{
+btc <- ubci_get(code = "UPBIT.KRW-BTC")
+btc
+
+ubci_get(code = "UPBIT.KRW-BTC", from="2018-05-15")
+ubci_get(code = "UPBIT.KRW-BTC", to="2018-05-15")
+}
+
 }

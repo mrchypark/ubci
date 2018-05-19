@@ -4,6 +4,12 @@
 #'
 #' @param lang language options. Default is en for English. ko is posible for Korean.
 #'
+#' @examples
+#' \dontrun{
+#' ubci_get_options()
+#' ubci_get_options("ko")
+#' }
+#'
 #' @export
 #' @importFrom httr GET content
 #' @importFrom tibble tibble
@@ -14,7 +20,7 @@ ubci_get_options <- function(lang = c("en", "ko")) {
   dat <- httr::GET(tar) %>%
     httr::content()
   code <- sapply(dat, function(x)
-    gsub("CRIX\\.UPBIT\\.", "", x$code))
+    gsub("CRIX\\.", "", x$code))
   if (lang[1] == "en") {
     name <- sapply(dat, function(x)
       x$englishName)

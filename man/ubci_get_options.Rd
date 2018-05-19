@@ -12,3 +12,10 @@ ubci_get_options(lang = c("en", "ko"))
 \description{
 get ubci options from source.
 }
+\examples{
+\dontrun{
+ubci_get_options()
+ubci_get_options("ko")
+}
+
+}

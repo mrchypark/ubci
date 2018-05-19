@@ -1,6 +1,6 @@
 #' get ubci index
 #'
-#' get ubci index data from source.
+#' get ubci index data from source. Source is \href{https://www.ubcindex.com/indexes}{here}.
 #'
 #' @param index default is UBMI.
 #' @param from Optional for various time series.
@@ -9,6 +9,17 @@
 #' @param to Optional for various time series.
 #'   A character string representing an end date in
 #'   YYYY-MM-DD format.
+#'
+#' @return Return type is tibble has columes contain index, date, open, high, low, close.
+#'
+#' @examples
+#' \dontrun{
+#' index <- ubci_index(index = "UBMI")
+#' index
+#'
+#' ubci_index(index = "UBMI", from="2018-05-15")
+#' ubci_index(index = "UBMI", to="2018-05-15")
+#' }
 #'
 #' @export
 #' @importFrom httr GET content

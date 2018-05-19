@@ -18,3 +18,7 @@ Imports:
     tidyr,
     magrittr
 Roxygen: list(markdown = TRUE)
+Suggests: 
+    testthat
+Depends:
+    R (>= 3.2)

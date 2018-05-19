@@ -4,6 +4,12 @@
 #'
 #' @param lang language options. Default is en for English. ko is posible for Korean.
 #'
+#' @examples
+#' \dontrun{
+#' ubci_index_options()
+#' ubci_index_options("ko")
+#' }
+#'
 #' @export
 #' @importFrom httr GET content
 #' @importFrom tibble as_tibble

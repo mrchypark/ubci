@@ -17,6 +17,19 @@ YYYY-MM-DD format.}
 A character string representing an end date in
 YYYY-MM-DD format.}
 }
+\value{
+Return type is tibble has columes contain index, date, open, high, low, close.
+}
 \description{
-get ubci index data from source.
+get ubci index data from source. Source is \href{https://www.ubcindex.com/indexes}{here}.
+}
+\examples{
+\dontrun{
+index <- ubci_index(index = "UBMI")
+index
+
+ubci_index(index = "UBMI", from="2018-05-15")
+ubci_index(index = "UBMI", to="2018-05-15")
+}
+
 }

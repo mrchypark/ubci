@@ -1,14 +1,25 @@
 #' get coin price
 #'
-#' get coin price data from source.
+#' get coin price data from source. Source is \href{https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC}{here}.
 #'
-#' @param index coin name fom ubci_get_options() link KRW-BTC.
+#' @param code coin name fom ubci_get_options() link "UPBIT.KRW-BTC".
 #' @param from Optional for various time series.
 #'   A character string representing a start date in
 #'   YYYY-MM-DD format.
 #' @param to Optional for various time series.
 #'   A character string representing an end date in
 #'   YYYY-MM-DD format.
+#'
+#' @return Return type is tibble has columes contain code, date, open, high, low, close, volume.
+#'
+#' @examples
+#' \dontrun{
+#' btc <- ubci_get(code = "UPBIT.KRW-BTC")
+#' btc
+#'
+#' ubci_get(code = "UPBIT.KRW-BTC", from="2018-05-15")
+#' ubci_get(code = "UPBIT.KRW-BTC", to="2018-05-15")
+#' }
 #'
 #' @export
 #' @importFrom httr GET content
@@ -17,12 +28,12 @@
 #' @importFrom lubridate ymd_hms ymd
 #' @importFrom dplyr mutate
 
-ubci_get <- function(index, from, to) {
-  index <- toupper(gsub("CRIX\\.UPBIT\\.", "", index))
+ubci_get <- function(code, from, to) {
+  index <- toupper(gsub("CRIX\\.", "", code))
   tar <-
     paste0(
-      "https://crix-api-cdn.upbit.com/v1/crix/candles/days?code=CRIX.UPBIT.",
-      index,
+      "https://crix-api-cdn.upbit.com/v1/crix/candles/days?code=CRIX.",
+      code,
       "&count=10000"
     )
 
@@ -43,14 +54,14 @@ ubci_get <- function(index, from, to) {
     tibble::as_tibble() %>%
     dplyr::transmute(
       date = lubridate::ymd(lubridate::ymd_hms(candleDateTime)),
-      index = toupper(gsub("CRIX\\.UPBIT\\.", "", code)),
+      code = gsub("CRIX\\.", "", code),
       open = openingPrice,
       high = highPrice,
       low = lowPrice,
       close = tradePrice,
       volume = candleAccTradeVolume
     ) %>%
-    dplyr::select(index,
+    dplyr::select(code,
                   date,
                   open,
                   high,

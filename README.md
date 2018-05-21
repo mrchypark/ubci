@@ -10,6 +10,8 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 status](https://travis-ci.org/mrchypark/ubci.svg?branch=master)](https://travis-ci.org/mrchypark/ubci)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
+[![Coverage
+status](https://codecov.io/gh/mrchypark/ubci/branch/master/graph/badge.svg)](https://codecov.io/github/mrchypark/ubci?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ubci)](https://cran.r-project.org/package=ubci)
 
@@ -29,7 +31,7 @@ please check encoding UTF-8 for unix-like os.
 
 ``` r
 Sys.getlocale()
-#> [1] "LC_COLLATE=Korean_Korea.949;LC_CTYPE=Korean_Korea.949;LC_MONETARY=Korean_Korea.949;LC_NUMERIC=C;LC_TIME=Korean_Korea.949"
+#> [1] "ko_KR.UTF-8/ko_KR.UTF-8/ko_KR.UTF-8/C/ko_KR.UTF-8/en_US.UTF-8"
 ```
 
 ## Example
@@ -45,12 +47,12 @@ ubci_index_options()
 #> # A tibble: 26 x 4
 #>    index    name                                cate           smry       
 #>    <chr>    <chr>                               <chr>          <chr>      
-#>  1 UBMI     UBMI(Upbit Market Index)            Market Indexes It is calc~
-#>  2 UBMI_ST  UBMI BTC quote(Upbit Market Index)  Market Indexes It is the ~
-#>  3 UBAI     UBAI(Upbit Altcoin Index)           Market Indexes It is calc~
-#>  4 UBAI_ST  UBAI BTC quote(Upbit Altcoin Index) Market Indexes It is the ~
-#>  5 UTTI     UBMI 10(Upbit Top 10)               Market Indexes It is an i~
-#>  6 UTHI     UBMI 30(Upbit Top 30)               Market Indexes It is an i~
+#>  1 UBMI     UBMI(Upbit Market Index)            Market Indexes It is calc…
+#>  2 UBMI_ST  UBMI BTC quote(Upbit Market Index)  Market Indexes It is the …
+#>  3 UBAI     UBAI(Upbit Altcoin Index)           Market Indexes It is calc…
+#>  4 UBAI_ST  UBAI BTC quote(Upbit Altcoin Index) Market Indexes It is the …
+#>  5 UTTI     UBMI 10(Upbit Top 10)               Market Indexes It is an i…
+#>  6 UTHI     UBMI 30(Upbit Top 30)               Market Indexes It is an i…
 #>  7 THMIDX10 Value Preservation and Basket       Theme Indexes  ""         
 #>  8 THMIDX16 Simple Settlement Platform          Theme Indexes  ""         
 #>  9 THMIDX05 Game                                Theme Indexes  ""         
@@ -66,16 +68,16 @@ ubci_index_options(lang="ko")
 #> # A tibble: 26 x 4
 #>    index    name                                cate        smry          
 #>    <chr>    <chr>                               <chr>       <chr>         
-#>  1 UBMI     UBMI(Upbit Market Index)            시장 인덱스 업비트 거래소에 상장된 ~
-#>  2 UBMI_ST  UBMI BTC quote(Upbit Market Index)  시장 인덱스 UBMI 인덱스를 비트코~
-#>  3 UBAI     UBAI(Upbit Altcoin Index)           시장 인덱스 업비트 거래소에 상장된 ~
-#>  4 UBAI_ST  UBAI BTC quote(Upbit Altcoin Index) 시장 인덱스 UBAI 인덱스를 비트코~
-#>  5 UTTI     UBMI 10(Upbit Top 10)               시장 인덱스 업비트에 상장된 암호화폐~
-#>  6 UTHI     UBMI 30(Upbit Top 30)               시장 인덱스 업비트에 상장된 암호화폐~
-#>  7 THMIDX10 가치보존 및 바스켓                  테마 인덱스 다른 자산으로 구성된 바~
-#>  8 THMIDX16 간편결제 플랫폼                     테마 인덱스 온라인 자산과 암호화폐를~
-#>  9 THMIDX05 게임시장                            테마 인덱스 게임 산업과 연관되거나,~
-#> 10 THMIDX14 광고산업                            테마 인덱스 다양한 형태의 광고와 관~
+#>  1 UBMI     UBMI(Upbit Market Index)            시장 인덱스 업비트 거래소에 상장된 …
+#>  2 UBMI_ST  UBMI BTC quote(Upbit Market Index)  시장 인덱스 UBMI 인덱스를 비트코…
+#>  3 UBAI     UBAI(Upbit Altcoin Index)           시장 인덱스 업비트 거래소에 상장된 …
+#>  4 UBAI_ST  UBAI BTC quote(Upbit Altcoin Index) 시장 인덱스 UBAI 인덱스를 비트코…
+#>  5 UTTI     UBMI 10(Upbit Top 10)               시장 인덱스 업비트에 상장된 암호화폐…
+#>  6 UTHI     UBMI 30(Upbit Top 30)               시장 인덱스 업비트에 상장된 암호화폐…
+#>  7 THMIDX10 가치보존 및 바스켓                  테마 인덱스 다른 자산으로 구성된 바…
+#>  8 THMIDX16 간편결제 플랫폼                     테마 인덱스 온라인 자산과 암호화폐를…
+#>  9 THMIDX05 게임시장                            테마 인덱스 게임 산업과 연관되거나,…
+#> 10 THMIDX14 광고산업                            테마 인덱스 다양한 형태의 광고와 관…
 #> # ... with 16 more rows
 ```
 
@@ -89,29 +91,30 @@ loi<-ubci_index_options()
 loi$index[1]
 #> [1] "UBMI"
 ubci_index(loi$index[1])
-#> # A tibble: 231 x 6
+#> # A tibble: 233 x 6
 #>    index date        open  high   low close
 #>    <chr> <date>     <dbl> <dbl> <dbl> <dbl>
-#>  1 UBMI  2018-05-19 2231. 2238. 2205. 2220.
-#>  2 UBMI  2018-05-18 2199. 2232. 2140. 2229.
-#>  3 UBMI  2018-05-17 2281. 2317. 2177. 2200.
-#>  4 UBMI  2018-05-16 2319. 2330. 2183. 2281.
-#>  5 UBMI  2018-05-15 2419. 2439. 2301. 2317.
-#>  6 UBMI  2018-05-14 2431. 2456. 2305. 2417.
-#>  7 UBMI  2018-05-13 2313. 2445. 2274. 2430.
-#>  8 UBMI  2018-05-12 2206. 2356. 2138. 2313.
-#>  9 UBMI  2018-05-11 2446. 2465. 2088. 2239.
-#> 10 UBMI  2018-05-10 2598. 2608. 2431. 2446.
-#> # ... with 221 more rows
+#>  1 UBMI  2018-05-21 2290. 2298. 2270. 2272.
+#>  2 UBMI  2018-05-20 2216. 2300. 2198. 2290.
+#>  3 UBMI  2018-05-19 2231. 2255. 2197. 2215.
+#>  4 UBMI  2018-05-18 2199. 2232. 2140. 2229.
+#>  5 UBMI  2018-05-17 2281. 2317. 2177. 2200.
+#>  6 UBMI  2018-05-16 2319. 2330. 2183. 2281.
+#>  7 UBMI  2018-05-15 2419. 2439. 2301. 2317.
+#>  8 UBMI  2018-05-14 2431. 2456. 2305. 2417.
+#>  9 UBMI  2018-05-13 2313. 2445. 2274. 2430.
+#> 10 UBMI  2018-05-12 2206. 2356. 2138. 2313.
+#> # ... with 223 more rows
 tail(ubci_index(loi$index[1], from="2018-05-15"))
-#> # A tibble: 5 x 6
+#> # A tibble: 6 x 6
 #>   index date        open  high   low close
 #>   <chr> <date>     <dbl> <dbl> <dbl> <dbl>
-#> 1 UBMI  2018-05-19 2231. 2238. 2205. 2220.
-#> 2 UBMI  2018-05-18 2199. 2232. 2140. 2229.
-#> 3 UBMI  2018-05-17 2281. 2317. 2177. 2200.
-#> 4 UBMI  2018-05-16 2319. 2330. 2183. 2281.
-#> 5 UBMI  2018-05-15 2419. 2439. 2301. 2317.
+#> 1 UBMI  2018-05-20 2216. 2300. 2198. 2290.
+#> 2 UBMI  2018-05-19 2231. 2255. 2197. 2215.
+#> 3 UBMI  2018-05-18 2199. 2232. 2140. 2229.
+#> 4 UBMI  2018-05-17 2281. 2317. 2177. 2200.
+#> 5 UBMI  2018-05-16 2319. 2330. 2183. 2281.
+#> 6 UBMI  2018-05-15 2419. 2439. 2301. 2317.
 ubci_index(loi$index[1], to="2018-05-15")
 #> # A tibble: 227 x 6
 #>    index date        open  high   low close
@@ -146,18 +149,18 @@ ubci_index(loi$index[1], from="2018-05-10", to="2018-05-15")
 ``` r
 ubci_get_options()
 #> # A tibble: 397 x 5
-#>    code      name         exchange tradeStatus marketState
-#>    <chr>     <chr>        <chr>    <chr>       <chr>      
-#>  1 KRW-BTC   Bitcoin      UPBIT    ACTIVE      ACTIVE     
-#>  2 KRW-DASH  Dash         UPBIT    PREVIEW     ACTIVE     
-#>  3 KRW-ETH   Ethereum     UPBIT    PREVIEW     ACTIVE     
-#>  4 BTC-NEO   NEO          UPBIT    ACTIVE      ACTIVE     
-#>  5 BTC-BCC   Bitcoin Cash UPBIT    ACTIVE      ACTIVE     
-#>  6 BTC-ETH   Ethereum     UPBIT    ACTIVE      ACTIVE     
-#>  7 BTC-MTL   Metal        UPBIT    DELISTED    DELISTED   
-#>  8 BTC-LTC   Litecoin     UPBIT    ACTIVE      ACTIVE     
-#>  9 BTC-STRAT Stratis      UPBIT    ACTIVE      ACTIVE     
-#> 10 BTC-XRP   Ripple       UPBIT    ACTIVE      ACTIVE     
+#>    code            name         exchange tradeStatus marketState
+#>    <chr>           <chr>        <chr>    <chr>       <chr>      
+#>  1 UPBIT.KRW-BTC   Bitcoin      UPBIT    ACTIVE      ACTIVE     
+#>  2 UPBIT.KRW-DASH  Dash         UPBIT    PREVIEW     ACTIVE     
+#>  3 UPBIT.KRW-ETH   Ethereum     UPBIT    PREVIEW     ACTIVE     
+#>  4 UPBIT.BTC-NEO   NEO          UPBIT    ACTIVE      ACTIVE     
+#>  5 UPBIT.BTC-BCC   Bitcoin Cash UPBIT    ACTIVE      ACTIVE     
+#>  6 UPBIT.BTC-ETH   Ethereum     UPBIT    ACTIVE      ACTIVE     
+#>  7 UPBIT.BTC-MTL   Metal        UPBIT    DELISTED    DELISTED   
+#>  8 UPBIT.BTC-LTC   Litecoin     UPBIT    ACTIVE      ACTIVE     
+#>  9 UPBIT.BTC-STRAT Stratis      UPBIT    ACTIVE      ACTIVE     
+#> 10 UPBIT.BTC-XRP   Ripple       UPBIT    ACTIVE      ACTIVE     
 #> # ... with 387 more rows
 ```
 
@@ -167,18 +170,18 @@ crypto.
 ``` r
 ubci_get_options(lang="ko")
 #> # A tibble: 397 x 5
-#>    code      name         exchange tradeStatus marketState
-#>    <chr>     <chr>        <chr>    <chr>       <chr>      
-#>  1 KRW-BTC   비트코인     UPBIT    ACTIVE      ACTIVE     
-#>  2 KRW-DASH  대시         UPBIT    PREVIEW     ACTIVE     
-#>  3 KRW-ETH   이더리움     UPBIT    PREVIEW     ACTIVE     
-#>  4 BTC-NEO   네오         UPBIT    ACTIVE      ACTIVE     
-#>  5 BTC-BCC   비트코인캐시 UPBIT    ACTIVE      ACTIVE     
-#>  6 BTC-ETH   이더리움     UPBIT    ACTIVE      ACTIVE     
-#>  7 BTC-MTL   메탈         UPBIT    DELISTED    DELISTED   
-#>  8 BTC-LTC   라이트코인   UPBIT    ACTIVE      ACTIVE     
-#>  9 BTC-STRAT 스트라티스   UPBIT    ACTIVE      ACTIVE     
-#> 10 BTC-XRP   리플         UPBIT    ACTIVE      ACTIVE     
+#>    code            name         exchange tradeStatus marketState
+#>    <chr>           <chr>        <chr>    <chr>       <chr>      
+#>  1 UPBIT.KRW-BTC   비트코인     UPBIT    ACTIVE      ACTIVE     
+#>  2 UPBIT.KRW-DASH  대시         UPBIT    PREVIEW     ACTIVE     
+#>  3 UPBIT.KRW-ETH   이더리움     UPBIT    PREVIEW     ACTIVE     
+#>  4 UPBIT.BTC-NEO   네오         UPBIT    ACTIVE      ACTIVE     
+#>  5 UPBIT.BTC-BCC   비트코인캐시 UPBIT    ACTIVE      ACTIVE     
+#>  6 UPBIT.BTC-ETH   이더리움     UPBIT    ACTIVE      ACTIVE     
+#>  7 UPBIT.BTC-MTL   메탈         UPBIT    DELISTED    DELISTED   
+#>  8 UPBIT.BTC-LTC   라이트코인   UPBIT    ACTIVE      ACTIVE     
+#>  9 UPBIT.BTC-STRAT 스트라티스   UPBIT    ACTIVE      ACTIVE     
+#> 10 UPBIT.BTC-XRP   리플         UPBIT    ACTIVE      ACTIVE     
 #> # ... with 387 more rows
 ```
 
@@ -190,56 +193,57 @@ with from/to.
 ``` r
 loc<-ubci_get_options()
 loc$code[1]
-#> [1] "KRW-BTC"
+#> [1] "UPBIT.KRW-BTC"
 ubci_get(loc$code[1])
-#> # A tibble: 237 x 7
-#>    index   date            open      high      low    close volume
-#>    <chr>   <date>         <dbl>     <dbl>    <dbl>    <dbl>  <dbl>
-#>  1 KRW-BTC 2018-05-19  9165000.  9205000. 9100000. 9147000.   700.
-#>  2 KRW-BTC 2018-05-18  9072000.  9186000. 8881000. 9165000.  5904.
-#>  3 KRW-BTC 2018-05-17  9297000.  9390000. 9020000. 9090000.  6922.
-#>  4 KRW-BTC 2018-05-16  9500000.  9542000. 9015000. 9297000. 12219.
-#>  5 KRW-BTC 2018-05-15  9802000.  9879000. 9458000. 9500000.  8326.
-#>  6 KRW-BTC 2018-05-14  9804000.  9935000. 9400000. 9797000. 12813.
-#>  7 KRW-BTC 2018-05-13  9480000.  9851000. 9360000. 9803000.  8513.
-#>  8 KRW-BTC 2018-05-12  9257000.  9644000. 9014000. 9481000. 10980.
-#>  9 KRW-BTC 2018-05-11  9976000.  9985000. 8788000. 9256000. 20998.
-#> 10 KRW-BTC 2018-05-10 10405000. 10474000. 9895000. 9976000.  9078.
-#> # ... with 227 more rows
+#> # A tibble: 239 x 7
+#>    code          date           open     high      low    close volume
+#>    <chr>         <date>        <dbl>    <dbl>    <dbl>    <dbl>  <dbl>
+#>  1 UPBIT.KRW-BTC 2018-05-21 9370000. 9400000. 9287000. 9316000.   558.
+#>  2 UPBIT.KRW-BTC 2018-05-20 9112000. 9398000. 9051000. 9370000.  4901.
+#>  3 UPBIT.KRW-BTC 2018-05-19 9165000. 9299000. 9068000. 9112000.  6285.
+#>  4 UPBIT.KRW-BTC 2018-05-18 9072000. 9186000. 8881000. 9165000.  5904.
+#>  5 UPBIT.KRW-BTC 2018-05-17 9297000. 9390000. 9020000. 9090000.  6922.
+#>  6 UPBIT.KRW-BTC 2018-05-16 9500000. 9542000. 9015000. 9297000. 12219.
+#>  7 UPBIT.KRW-BTC 2018-05-15 9802000. 9879000. 9458000. 9500000.  8326.
+#>  8 UPBIT.KRW-BTC 2018-05-14 9804000. 9935000. 9400000. 9797000. 12813.
+#>  9 UPBIT.KRW-BTC 2018-05-13 9480000. 9851000. 9360000. 9803000.  8513.
+#> 10 UPBIT.KRW-BTC 2018-05-12 9257000. 9644000. 9014000. 9481000. 10980.
+#> # ... with 229 more rows
 tail(ubci_get(loc$code[1], from="2018-05-15"))
-#> # A tibble: 5 x 7
-#>   index   date           open     high      low    close volume
-#>   <chr>   <date>        <dbl>    <dbl>    <dbl>    <dbl>  <dbl>
-#> 1 KRW-BTC 2018-05-19 9165000. 9205000. 9100000. 9147000.   700.
-#> 2 KRW-BTC 2018-05-18 9072000. 9186000. 8881000. 9165000.  5904.
-#> 3 KRW-BTC 2018-05-17 9297000. 9390000. 9020000. 9090000.  6922.
-#> 4 KRW-BTC 2018-05-16 9500000. 9542000. 9015000. 9297000. 12219.
-#> 5 KRW-BTC 2018-05-15 9802000. 9879000. 9458000. 9500000.  8326.
+#> # A tibble: 6 x 7
+#>   code          date           open     high      low    close volume
+#>   <chr>         <date>        <dbl>    <dbl>    <dbl>    <dbl>  <dbl>
+#> 1 UPBIT.KRW-BTC 2018-05-20 9112000. 9398000. 9051000. 9370000.  4901.
+#> 2 UPBIT.KRW-BTC 2018-05-19 9165000. 9299000. 9068000. 9112000.  6285.
+#> 3 UPBIT.KRW-BTC 2018-05-18 9072000. 9186000. 8881000. 9165000.  5904.
+#> 4 UPBIT.KRW-BTC 2018-05-17 9297000. 9390000. 9020000. 9090000.  6922.
+#> 5 UPBIT.KRW-BTC 2018-05-16 9500000. 9542000. 9015000. 9297000. 12219.
+#> 6 UPBIT.KRW-BTC 2018-05-15 9802000. 9879000. 9458000. 9500000.  8326.
 ubci_get(loc$code[1], to="2018-05-15")
 #> # A tibble: 233 x 7
-#>    index   date            open      high       low     close volume
-#>    <chr>   <date>         <dbl>     <dbl>     <dbl>     <dbl>  <dbl>
-#>  1 KRW-BTC 2018-05-15  9802000.  9879000.  9458000.  9500000.  8326.
-#>  2 KRW-BTC 2018-05-14  9804000.  9935000.  9400000.  9797000. 12813.
-#>  3 KRW-BTC 2018-05-13  9480000.  9851000.  9360000.  9803000.  8513.
-#>  4 KRW-BTC 2018-05-12  9257000.  9644000.  9014000.  9481000. 10980.
-#>  5 KRW-BTC 2018-05-11  9976000.  9985000.  8788000.  9256000. 20998.
-#>  6 KRW-BTC 2018-05-10 10405000. 10474000.  9895000.  9976000.  9078.
-#>  7 KRW-BTC 2018-05-09 10230000. 10433000.  9917000. 10405000.  9955.
-#>  8 KRW-BTC 2018-05-08 10439000. 10499000. 10130000. 10233000.  7651.
-#>  9 KRW-BTC 2018-05-07 10684000. 10721000. 10264000. 10422000.  8143.
-#> 10 KRW-BTC 2018-05-06 10820000. 10963000. 10500000. 10684000.  8806.
+#>    code          date            open      high       low     close volume
+#>    <chr>         <date>         <dbl>     <dbl>     <dbl>     <dbl>  <dbl>
+#>  1 UPBIT.KRW-BTC 2018-05-15  9802000.  9879000.  9458000.  9500000.  8326.
+#>  2 UPBIT.KRW-BTC 2018-05-14  9804000.  9935000.  9400000.  9797000. 12813.
+#>  3 UPBIT.KRW-BTC 2018-05-13  9480000.  9851000.  9360000.  9803000.  8513.
+#>  4 UPBIT.KRW-BTC 2018-05-12  9257000.  9644000.  9014000.  9481000. 10980.
+#>  5 UPBIT.KRW-BTC 2018-05-11  9976000.  9985000.  8788000.  9256000. 20998.
+#>  6 UPBIT.KRW-BTC 2018-05-10 10405000. 10474000.  9895000.  9976000.  9078.
+#>  7 UPBIT.KRW-BTC 2018-05-09 10230000. 10433000.  9917000. 10405000.  9955.
+#>  8 UPBIT.KRW-BTC 2018-05-08 10439000. 10499000. 10130000. 10233000.  7651.
+#>  9 UPBIT.KRW-BTC 2018-05-07 10684000. 10721000. 10264000. 10422000.  8143.
+#> 10 UPBIT.KRW-BTC 2018-05-06 10820000. 10963000. 10500000. 10684000.  8806.
 #> # ... with 223 more rows
 ubci_get(loc$code[1], from="2018-05-10", to="2018-05-15")
 #> # A tibble: 6 x 7
-#>   index   date            open      high      low    close volume
-#>   <chr>   <date>         <dbl>     <dbl>    <dbl>    <dbl>  <dbl>
-#> 1 KRW-BTC 2018-05-15  9802000.  9879000. 9458000. 9500000.  8326.
-#> 2 KRW-BTC 2018-05-14  9804000.  9935000. 9400000. 9797000. 12813.
-#> 3 KRW-BTC 2018-05-13  9480000.  9851000. 9360000. 9803000.  8513.
-#> 4 KRW-BTC 2018-05-12  9257000.  9644000. 9014000. 9481000. 10980.
-#> 5 KRW-BTC 2018-05-11  9976000.  9985000. 8788000. 9256000. 20998.
-#> 6 KRW-BTC 2018-05-10 10405000. 10474000. 9895000. 9976000.  9078.
+#>   code          date            open      high      low    close volume
+#>   <chr>         <date>         <dbl>     <dbl>    <dbl>    <dbl>  <dbl>
+#> 1 UPBIT.KRW-BTC 2018-05-15  9802000.  9879000. 9458000. 9500000.  8326.
+#> 2 UPBIT.KRW-BTC 2018-05-14  9804000.  9935000. 9400000. 9797000. 12813.
+#> 3 UPBIT.KRW-BTC 2018-05-13  9480000.  9851000. 9360000. 9803000.  8513.
+#> 4 UPBIT.KRW-BTC 2018-05-12  9257000.  9644000. 9014000. 9481000. 10980.
+#> 5 UPBIT.KRW-BTC 2018-05-11  9976000.  9985000. 8788000. 9256000. 20998.
+#> 6 UPBIT.KRW-BTC 2018-05-10 10405000. 10474000. 9895000. 9976000.  9078.
 ```
 
 Session info is below.
@@ -247,32 +251,31 @@ Session info is below.
 ``` r
 sessionInfo()
 #> R version 3.4.4 (2018-03-15)
-#> Platform: x86_64-w64-mingw32/x64 (64-bit)
-#> Running under: Windows 10 x64 (build 17134)
+#> Platform: x86_64-apple-darwin15.6.0 (64-bit)
+#> Running under: macOS High Sierra 10.13.4
 #> 
 #> Matrix products: default
+#> BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
+#> LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
 #> 
 #> locale:
-#> [1] LC_COLLATE=Korean_Korea.949  LC_CTYPE=Korean_Korea.949   
-#> [3] LC_MONETARY=Korean_Korea.949 LC_NUMERIC=C                
-#> [5] LC_TIME=Korean_Korea.949    
+#> [1] ko_KR.UTF-8/ko_KR.UTF-8/ko_KR.UTF-8/C/ko_KR.UTF-8/en_US.UTF-8
 #> 
 #> attached base packages:
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] bindrcpp_0.2.2       ubci_0.0.1           RevoUtils_10.0.9    
-#> [4] RevoUtilsMath_10.0.1
+#> [1] bindrcpp_0.2.2 ubci_0.0.1    
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] Rcpp_0.12.16     knitr_1.20       bindr_0.1.1      magrittr_1.5    
 #>  [5] tidyselect_0.2.4 R6_2.2.2         rlang_0.2.0      stringr_1.3.0   
-#>  [9] httr_1.3.1       dplyr_0.7.4      tools_3.4.4      utf8_1.1.3      
+#>  [9] httr_1.3.1       dplyr_0.7.5.9000 tools_3.4.4      utf8_1.1.3      
 #> [13] cli_1.0.0        htmltools_0.3.6  yaml_2.1.18      rprojroot_1.3-2 
 #> [17] digest_0.6.15    assertthat_0.2.0 tibble_1.4.2     crayon_1.3.4    
-#> [21] purrr_0.2.4      tidyr_0.8.0      curl_3.2         glue_1.2.0      
+#> [21] tidyr_0.8.0      purrr_0.2.4      curl_3.2         glue_1.2.0      
 #> [25] evaluate_0.10.1  rmarkdown_1.9    stringi_1.1.7    compiler_3.4.4  
-#> [29] pillar_1.2.1     backports_1.1.2  jsonlite_1.5     lubridate_1.7.2 
+#> [29] pillar_1.2.1     backports_1.1.2  jsonlite_1.5     lubridate_1.7.4 
 #> [33] pkgconfig_2.0.1
 ```
 

@@ -19,6 +19,7 @@ Imports:
     magrittr
 Roxygen: list(markdown = TRUE)
 Suggests: 
-    testthat
+    testthat,
+    covr
 Depends:
     R (>= 3.2)

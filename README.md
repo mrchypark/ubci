@@ -10,6 +10,8 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 status](https://travis-ci.org/mrchypark/ubci.svg?branch=master)](https://travis-ci.org/mrchypark/ubci)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
+[![Coverage
+status](https://codecov.io/gh/mrchypark/ubci/branch/master/graph/badge.svg)](https://codecov.io/github/mrchypark/ubci?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/ubci)](https://cran.r-project.org/package=ubci)
 
@@ -198,7 +200,7 @@ ubci_get(loc$code[1])
 #> # A tibble: 261 x 7
 #>    code          date           open     high      low    close volume
 #>    <chr>         <date>        <dbl>    <dbl>    <dbl>    <dbl>  <dbl>
-#>  1 UPBIT.KRW-BTC 2018-06-12 7635000. 7685000. 7440000. 7512000.  3401.
+#>  1 UPBIT.KRW-BTC 2018-06-12 7635000. 7685000. 7440000. 7510000.  3403.
 #>  2 UPBIT.KRW-BTC 2018-06-11 7576000. 7662000. 7362000. 7635000.  4309.
 #>  3 UPBIT.KRW-BTC 2018-06-10 8233000. 8247000. 7425000. 7576000.  7445.
 #>  4 UPBIT.KRW-BTC 2018-06-09 8341000. 8370000. 8205000. 8233000.  1658.

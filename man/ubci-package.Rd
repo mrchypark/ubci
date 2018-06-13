@@ -4,9 +4,9 @@
 \name{ubci-package}
 \alias{ubci}
 \alias{ubci-package}
-\title{ubci: Get Crypto Related Data}
+\title{ubci: Get Cryptocurrency Related Data}
 \description{
-Get UBCI(UpBit Crypto Index) & Price from upbit.
+Get UBCI(Upbit Crypto Index) & Price from Upbit.
 }
 \seealso{
 Useful links:

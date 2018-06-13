@@ -29,6 +29,15 @@
 #' @importFrom dplyr mutate
 
 ubci_index <- function(index = "UBMI", from, to) {
+  candleDateTime <- NULL
+  code <- NULL
+  high <- NULL
+  highPrice <- NULL
+  low <- NULL
+  lowPrice <- NULL
+  openingPrice <- NULL
+  tradePrice <- NULL
+
   index <- toupper(gsub("IDX\\.UPBIT\\.","",index))
   tar <-
     paste0(

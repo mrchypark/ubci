@@ -29,6 +29,16 @@
 #' @importFrom dplyr mutate
 
 ubci_get <- function(code, from, to) {
+  . <- NULL
+  candleDateTime <- NULL
+  openingPrice <- NULL
+  highPrice <- NULL
+  lowPrice <- NULL
+  tradePrice <- NULL
+  candleAccTradeVolume <- NULL
+  high <- NULL
+  low <- NULL
+  volume <- NULL
   index <- toupper(gsub("CRIX\\.", "", code))
   tar <-
     paste0(

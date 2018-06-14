@@ -21,7 +21,8 @@ YYYY-MM-DD format.}
 Return type is tibble has columes contain code, date, open, high, low, close, volume.
 }
 \description{
-get coin price data from source. Source is \href{https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC}{here}.
+get coin price data from source. Source is \url{https://upbit.com/exchange}.
+This page shows the multiple cryptocurrency price.
 }
 \examples{
 \dontrun{

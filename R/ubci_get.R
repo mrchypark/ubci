@@ -1,6 +1,8 @@
 #' get coin price
 #'
-#' get coin price data from source. Source is \href{https://upbit.com/exchange?code=CRIX.UPBIT.KRW-BTC}{here}.
+#' get coin price data from source. Source is <https://upbit.com/exchange>.
+#' This page shows the multiple cryptocurrency price.
+#'
 #'
 #' @param code coin name fom ubci_get_options() link "UPBIT.KRW-BTC".
 #' @param from Optional for various time series.

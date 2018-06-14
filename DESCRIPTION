@@ -1,7 +1,7 @@
 Package: ubci
 Version: 0.0.2
 Title: Get Cryptocurrency Related Data
-Description: Get UBCI(Upbit Crypto Index) & Price from Upbit.
+Description: Get UBCI(UpBit Crypto Index) & Price from Upbit.
 Authors@R: person("Chanyub", "Park", , "mrchypark@gmail.com", c("aut", "cre"))
 License: MIT + file LICENSE
 Encoding: UTF-8

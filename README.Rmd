@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/mrchypark/ubci?branch=master&svg=true)](https://ci.appveyor.com/project/mrchypark/ubci)
 [![Coverage status](https://codecov.io/gh/mrchypark/ubci/branch/master/graph/badge.svg)](https://codecov.io/github/mrchypark/ubci?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/ubci)](https://cran.r-project.org/package=ubci)
+[![CRAN download](http://cranlogs.r-pkg.org/badges/grand-total/ubci)](http://cranlogs.r-pkg.org/badges/grand-total/Rcpp)
 
 The goal of ubci is to get UBCI(UpBit Crypto Index) & Crypto price data form [upbit][upbit].
 
@@ -27,9 +28,17 @@ The goal of ubci is to get UBCI(UpBit Crypto Index) & Crypto price data form [up
 
 ## Installation
 
+ubci is now on cran!
+
+You can install on cran with:
+
+```
+install.packages("ubci")
+```
+
 You can install the development version of ubci from [GitHub](https://github.com/mrchypark/ubci) with:
 
-```{r message=FALSE}
+```
 source("https://install-github.me/mrchypark/ubci")
 ```
 

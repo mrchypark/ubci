@@ -147,13 +147,48 @@ YYYY-MM-DD format.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>index</span> <span class='kw'>&lt;-</span> <span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>)
-<span class='no'>index</span>
-
-<span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>, <span class='kw'>from</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)
-<span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)
-<span class='co'># }</span><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>index</span> <span class='kw'>&lt;-</span> <span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>)
+<span class='no'>index</span></div><div class='output co'>#&gt; # A tibble: 262 x 6
+#&gt;    index date        open  high   low close
+#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt;  1 UBMI  2018-06-19 1718. 1787. 1709. 1754.
+#&gt;  2 UBMI  2018-06-18 1666. 1737. 1641. 1718.
+#&gt;  3 UBMI  2018-06-17 1678. 1694. 1661. 1665.
+#&gt;  4 UBMI  2018-06-16 1660. 1690. 1641. 1678.
+#&gt;  5 UBMI  2018-06-15 1722. 1726. 1655. 1660.
+#&gt;  6 UBMI  2018-06-14 1621. 1729. 1602. 1721.
+#&gt;  7 UBMI  2018-06-13 1698. 1704. 1575. 1621.
+#&gt;  8 UBMI  2018-06-12 1796. 1810. 1672. 1697.
+#&gt;  9 UBMI  2018-06-11 1780. 1800. 1718. 1795.
+#&gt; 10 UBMI  2018-06-10 1970. 1970. 1722. 1779.
+#&gt; # ... with 252 more rows</div><div class='input'>
+<span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>, <span class='kw'>from</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)</div><div class='output co'>#&gt; # A tibble: 36 x 6
+#&gt;    index date        open  high   low close
+#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt;  1 UBMI  2018-06-19 1718. 1787. 1709. 1754.
+#&gt;  2 UBMI  2018-06-18 1666. 1737. 1641. 1718.
+#&gt;  3 UBMI  2018-06-17 1678. 1694. 1661. 1665.
+#&gt;  4 UBMI  2018-06-16 1660. 1690. 1641. 1678.
+#&gt;  5 UBMI  2018-06-15 1722. 1726. 1655. 1660.
+#&gt;  6 UBMI  2018-06-14 1621. 1729. 1602. 1721.
+#&gt;  7 UBMI  2018-06-13 1698. 1704. 1575. 1621.
+#&gt;  8 UBMI  2018-06-12 1796. 1810. 1672. 1697.
+#&gt;  9 UBMI  2018-06-11 1780. 1800. 1718. 1795.
+#&gt; 10 UBMI  2018-06-10 1970. 1970. 1722. 1779.
+#&gt; # ... with 26 more rows</div><div class='input'><span class='fu'>ubci_index</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"UBMI"</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)</div><div class='output co'>#&gt; # A tibble: 227 x 6
+#&gt;    index date        open  high   low close
+#&gt;    &lt;chr&gt; &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt;  1 UBMI  2018-05-15 2419. 2439. 2301. 2317.
+#&gt;  2 UBMI  2018-05-14 2431. 2456. 2305. 2417.
+#&gt;  3 UBMI  2018-05-13 2313. 2445. 2274. 2430.
+#&gt;  4 UBMI  2018-05-12 2206. 2356. 2138. 2313.
+#&gt;  5 UBMI  2018-05-11 2446. 2465. 2088. 2239.
+#&gt;  6 UBMI  2018-05-10 2598. 2608. 2431. 2446.
+#&gt;  7 UBMI  2018-05-09 2549. 2594. 2441. 2583.
+#&gt;  8 UBMI  2018-05-08 2618. 2644. 2521. 2567.
+#&gt;  9 UBMI  2018-05-07 2700. 2700. 2538. 2612.
+#&gt; 10 UBMI  2018-05-06 2699. 2699. 2699. 2699.
+#&gt; # ... with 217 more rows</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

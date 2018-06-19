@@ -25,7 +25,7 @@ get coin price data from source. Source is \url{https://upbit.com/exchange}.
 This page shows the multiple cryptocurrency price.
 }
 \examples{
-\dontrun{
+\donttest{
 btc <- ubci_get(code = "UPBIT.KRW-BTC")
 btc
 

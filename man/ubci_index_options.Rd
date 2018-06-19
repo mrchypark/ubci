@@ -13,7 +13,7 @@ ubci_index_options(lang = c("en", "ko"))
 get ubci index options from source.
 }
 \examples{
-\dontrun{
+\donttest{
 ubci_index_options()
 ubci_index_options("ko")
 }

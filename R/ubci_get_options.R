@@ -5,7 +5,7 @@
 #' @param lang language options. Default is en for English. ko is posible for Korean.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' ubci_get_options()
 #' ubci_get_options("ko")
 #' }

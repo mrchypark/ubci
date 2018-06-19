@@ -4,9 +4,12 @@
 \name{ubci-package}
 \alias{ubci}
 \alias{ubci-package}
-\title{ubci: Get Cryptocurrency Related Data}
+\title{ubci: Get Cryptocurrency Related Data by Upbit}
 \description{
-Get UBCI(UpBit Crypto Index) & Price from Upbit.
+Get 'UBCI' & Price from 'Upbit'.
+'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
+The 'upbit' is one of the cryptocurrency exchange in Korea. The 'ubci' package is a wrapper around the ticker
+information and 'ubci' API supplied by 'upbit'.
 }
 \seealso{
 Useful links:

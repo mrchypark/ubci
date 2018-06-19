@@ -1,7 +1,10 @@
 Package: ubci
 Version: 0.0.2
-Title: Get Cryptocurrency Related Data
-Description: Get UBCI(UpBit Crypto Index) & Price from Upbit.
+Title: Get Cryptocurrency Related Data by Upbit
+Description: Get 'UBCI' & Price from 'Upbit'.
+     'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
+     The 'upbit' is one of the cryptocurrency exchange in Korea. The 'ubci' package is a wrapper around the ticker
+     information and 'ubci' API supplied by 'upbit'.
 Authors@R: person("Chanyub", "Park", , "mrchypark@gmail.com", c("aut", "cre"))
 License: MIT + file LICENSE
 Encoding: UTF-8

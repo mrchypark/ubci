@@ -24,7 +24,7 @@ Return type is tibble has columes contain index, date, open, high, low, close.
 get ubci index data from source. Source is \href{https://www.ubcindex.com/indexes}{here}.
 }
 \examples{
-\dontrun{
+\donttest{
 index <- ubci_index(index = "UBMI")
 index
 

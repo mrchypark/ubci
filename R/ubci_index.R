@@ -13,7 +13,7 @@
 #' @return Return type is tibble has columes contain index, date, open, high, low, close.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' index <- ubci_index(index = "UBMI")
 #' index
 #'

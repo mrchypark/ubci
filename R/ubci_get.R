@@ -15,7 +15,7 @@
 #' @return Return type is tibble has columes contain code, date, open, high, low, close, volume.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' btc <- ubci_get(code = "UPBIT.KRW-BTC")
 #' btc
 #'

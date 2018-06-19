@@ -149,13 +149,48 @@ YYYY-MM-DD format.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='no'>btc</span> <span class='kw'>&lt;-</span> <span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>)
-<span class='no'>btc</span>
-
-<span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>, <span class='kw'>from</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)
-<span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)
-<span class='co'># }</span><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>btc</span> <span class='kw'>&lt;-</span> <span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>)
+<span class='no'>btc</span></div><div class='output co'>#&gt; # A tibble: 268 x 7
+#&gt;    code          date          open    high     low   close volume
+#&gt;    &lt;chr&gt;         &lt;date&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+#&gt;  1 UPBIT.KRW-BTC 2018-06-19 7461000 7649000 7428000 7553000  3189.
+#&gt;  2 UPBIT.KRW-BTC 2018-06-18 7231000 7550000 7135000 7461000  3051.
+#&gt;  3 UPBIT.KRW-BTC 2018-06-17 7275000 7329000 7206000 7218000  1502.
+#&gt;  4 UPBIT.KRW-BTC 2018-06-16 7180000 7336000 7116000 7277000  2031.
+#&gt;  5 UPBIT.KRW-BTC 2018-06-15 7363000 7399000 7151000 7180000  3302.
+#&gt;  6 UPBIT.KRW-BTC 2018-06-14 7039000 7380000 6977000 7355000  6512.
+#&gt;  7 UPBIT.KRW-BTC 2018-06-13 7350000 7390000 6951000 7040000  4943.
+#&gt;  8 UPBIT.KRW-BTC 2018-06-12 7635000 7685000 7270000 7350000  5044.
+#&gt;  9 UPBIT.KRW-BTC 2018-06-11 7576000 7662000 7362000 7635000  4309.
+#&gt; 10 UPBIT.KRW-BTC 2018-06-10 8233000 8247000 7425000 7576000  7445.
+#&gt; # ... with 258 more rows</div><div class='input'>
+<span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>, <span class='kw'>from</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)</div><div class='output co'>#&gt; # A tibble: 36 x 7
+#&gt;    code          date          open    high     low   close volume
+#&gt;    &lt;chr&gt;         &lt;date&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+#&gt;  1 UPBIT.KRW-BTC 2018-06-19 7461000 7649000 7428000 7553000  3189.
+#&gt;  2 UPBIT.KRW-BTC 2018-06-18 7231000 7550000 7135000 7461000  3051.
+#&gt;  3 UPBIT.KRW-BTC 2018-06-17 7275000 7329000 7206000 7218000  1502.
+#&gt;  4 UPBIT.KRW-BTC 2018-06-16 7180000 7336000 7116000 7277000  2031.
+#&gt;  5 UPBIT.KRW-BTC 2018-06-15 7363000 7399000 7151000 7180000  3302.
+#&gt;  6 UPBIT.KRW-BTC 2018-06-14 7039000 7380000 6977000 7355000  6512.
+#&gt;  7 UPBIT.KRW-BTC 2018-06-13 7350000 7390000 6951000 7040000  4943.
+#&gt;  8 UPBIT.KRW-BTC 2018-06-12 7635000 7685000 7270000 7350000  5044.
+#&gt;  9 UPBIT.KRW-BTC 2018-06-11 7576000 7662000 7362000 7635000  4309.
+#&gt; 10 UPBIT.KRW-BTC 2018-06-10 8233000 8247000 7425000 7576000  7445.
+#&gt; # ... with 26 more rows</div><div class='input'><span class='fu'>ubci_get</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"UPBIT.KRW-BTC"</span>, <span class='kw'>to</span><span class='kw'>=</span><span class='st'>"2018-05-15"</span>)</div><div class='output co'>#&gt; # A tibble: 233 x 7
+#&gt;    code          date           open     high      low    close volume
+#&gt;    &lt;chr&gt;         &lt;date&gt;        &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;
+#&gt;  1 UPBIT.KRW-BTC 2018-05-15  9802000  9879000  9458000  9500000  8326.
+#&gt;  2 UPBIT.KRW-BTC 2018-05-14  9804000  9935000  9400000  9797000 12813.
+#&gt;  3 UPBIT.KRW-BTC 2018-05-13  9480000  9851000  9360000  9803000  8513.
+#&gt;  4 UPBIT.KRW-BTC 2018-05-12  9257000  9644000  9014000  9481000 10980.
+#&gt;  5 UPBIT.KRW-BTC 2018-05-11  9976000  9985000  8788000  9256000 20998.
+#&gt;  6 UPBIT.KRW-BTC 2018-05-10 10405000 10474000  9895000  9976000  9078.
+#&gt;  7 UPBIT.KRW-BTC 2018-05-09 10230000 10433000  9917000 10405000  9955.
+#&gt;  8 UPBIT.KRW-BTC 2018-05-08 10439000 10499000 10130000 10233000  7651.
+#&gt;  9 UPBIT.KRW-BTC 2018-05-07 10684000 10721000 10264000 10422000  8143.
+#&gt; 10 UPBIT.KRW-BTC 2018-05-06 10820000 10963000 10500000 10684000  8806.
+#&gt; # ... with 223 more rows</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

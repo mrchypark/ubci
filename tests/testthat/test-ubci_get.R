@@ -7,7 +7,7 @@ test_that("colume check", {
 })
 
 test_that("code check", {
-  expect<-ubci_get_options()$code[sample(1:200,1)]
+  expect<-ubci_get_options()$code[1]
   tem <- ubci_get(expect)
   code <- unique(tem$code)
   expect_equal(code, expect)

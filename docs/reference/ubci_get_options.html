@@ -131,10 +131,33 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>ubci_get_options</span>()
-<span class='fu'>ubci_get_options</span>(<span class='st'>"ko"</span>)
-<span class='co'># }</span><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>ubci_get_options</span>()</div><div class='output co'>#&gt; # A tibble: 409 x 5
+#&gt;    code            name         exchange tradeStatus marketState
+#&gt;    &lt;chr&gt;           &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;      
+#&gt;  1 UPBIT.KRW-BTC   Bitcoin      UPBIT    ACTIVE      ACTIVE     
+#&gt;  2 UPBIT.KRW-DASH  Dash         UPBIT    PREVIEW     ACTIVE     
+#&gt;  3 UPBIT.KRW-ETH   Ethereum     UPBIT    PREVIEW     ACTIVE     
+#&gt;  4 UPBIT.BTC-NEO   NEO          UPBIT    ACTIVE      ACTIVE     
+#&gt;  5 UPBIT.BTC-BCC   Bitcoin Cash UPBIT    ACTIVE      ACTIVE     
+#&gt;  6 UPBIT.BTC-ETH   Ethereum     UPBIT    ACTIVE      ACTIVE     
+#&gt;  7 UPBIT.BTC-MTL   Metal        UPBIT    DELISTED    DELISTED   
+#&gt;  8 UPBIT.BTC-LTC   Litecoin     UPBIT    ACTIVE      ACTIVE     
+#&gt;  9 UPBIT.BTC-STRAT Stratis      UPBIT    ACTIVE      ACTIVE     
+#&gt; 10 UPBIT.BTC-XRP   Ripple       UPBIT    ACTIVE      ACTIVE     
+#&gt; # ... with 399 more rows</div><div class='input'><span class='fu'>ubci_get_options</span>(<span class='st'>"ko"</span>)</div><div class='output co'>#&gt; # A tibble: 409 x 5
+#&gt;    code            name         exchange tradeStatus marketState
+#&gt;    &lt;chr&gt;           &lt;chr&gt;        &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;      
+#&gt;  1 UPBIT.KRW-BTC   비트코인     UPBIT    ACTIVE      ACTIVE     
+#&gt;  2 UPBIT.KRW-DASH  대시         UPBIT    PREVIEW     ACTIVE     
+#&gt;  3 UPBIT.KRW-ETH   이더리움     UPBIT    PREVIEW     ACTIVE     
+#&gt;  4 UPBIT.BTC-NEO   네오         UPBIT    ACTIVE      ACTIVE     
+#&gt;  5 UPBIT.BTC-BCC   비트코인캐시 UPBIT    ACTIVE      ACTIVE     
+#&gt;  6 UPBIT.BTC-ETH   이더리움     UPBIT    ACTIVE      ACTIVE     
+#&gt;  7 UPBIT.BTC-MTL   메탈         UPBIT    DELISTED    DELISTED   
+#&gt;  8 UPBIT.BTC-LTC   라이트코인   UPBIT    ACTIVE      ACTIVE     
+#&gt;  9 UPBIT.BTC-STRAT 스트라티스   UPBIT    ACTIVE      ACTIVE     
+#&gt; 10 UPBIT.BTC-XRP   리플         UPBIT    ACTIVE      ACTIVE     
+#&gt; # ... with 399 more rows</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

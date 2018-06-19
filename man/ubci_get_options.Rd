@@ -13,7 +13,7 @@ ubci_get_options(lang = c("en", "ko"))
 get ubci options from source.
 }
 \examples{
-\dontrun{
+\donttest{
 ubci_get_options()
 ubci_get_options("ko")
 }

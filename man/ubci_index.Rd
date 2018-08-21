@@ -4,7 +4,8 @@
 \alias{ubci_index}
 \title{get ubci index}
 \usage{
-ubci_index(index = "UBMI", from, to)
+ubci_index(index = "UBMI", from = "2000-01-01",
+  to = as.character(Sys.Date()))
 }
 \arguments{
 \item{index}{default is UBMI.}
@@ -15,7 +16,7 @@ YYYY-MM-DD format.}
 
 \item{to}{Optional for various time series.
 A character string representing an end date in
-YYYY-MM-DD format.}
+YYYY-MM-DD format. Default is system date today.}
 }
 \value{
 Return type is tibble has columes contain index, date, open, high, low, close.

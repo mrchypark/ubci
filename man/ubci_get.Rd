@@ -11,11 +11,11 @@ ubci_get(code, from, to)
 
 \item{from}{Optional for various time series.
 A character string representing a start date in
-YYYY-MM-DD format.}
+YYYY-MM-DD format. Default is 2000-01-01.}
 
 \item{to}{Optional for various time series.
 A character string representing an end date in
-YYYY-MM-DD format.}
+YYYY-MM-DD format. Default is system date today.}
 }
 \value{
 Return type is tibble has columes contain code, date, open, high, low, close, volume.

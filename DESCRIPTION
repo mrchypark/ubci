@@ -1,5 +1,5 @@
 Package: ubci
-Version: 0.0.2
+Version: 0.0.3
 Title: Get Cryptocurrency Related Data by Upbit
 Description: Get 'UBCI' & Price from 'Upbit'.
      'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
@@ -12,7 +12,7 @@ LazyData: true
 ByteCompile: true
 URL: https://github.com/mrchypark/ubci
 BugReports: https://github.com/mrchypark/ubci/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Imports: 
     httr,
     lubridate,

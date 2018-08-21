@@ -8,7 +8,7 @@
 #'   YYYY-MM-DD format.
 #' @param to Optional for various time series.
 #'   A character string representing an end date in
-#'   YYYY-MM-DD format.
+#'   YYYY-MM-DD format. Default is system date today.
 #'
 #' @return Return type is tibble has columes contain index, date, open, high, low, close.
 #'
@@ -23,49 +23,44 @@
 #'
 #' @export
 #' @importFrom httr GET content
-#' @importFrom tidyr unnest
-#' @importFrom tibble as_tibble
-#' @importFrom lubridate ymd_hms ymd
-#' @importFrom dplyr mutate
+#' @importFrom lubridate ymd_hms ymd period
+#' @importFrom dplyr transmute select bind_cols
 
-ubci_index <- function(index = "UBMI", from, to) {
-  candleDateTime <- NULL
-  code <- NULL
-  high <- NULL
-  highPrice <- NULL
-  low <- NULL
-  lowPrice <- NULL
-  openingPrice <- NULL
-  tradePrice <- NULL
+ubci_index <- function(index = "UBMI",
+                       from = "2000-01-01",
+                       to = as.character(Sys.Date())) {
+  . <- candleDateTime <- code <- high <-
+    highPrice <- low <- lowPrice <-
+    openingPrice <- tradePrice <- NULL
 
-  index <- toupper(gsub("IDX\\.UPBIT\\.","",index))
+  index <- toupper(gsub("IDX\\.UPBIT\\.", "", index))
   tar <-
     paste0(
       "https://crix-api-cdn.upbit.com/v1/crix/candles/days?code=IDX.UPBIT.",
       index,
       "&count=10000"
     )
-  res <- httr::GET(tar) %>%
-    httr::content()
-  dat <- do.call(rbind, res) %>%
-    data.frame
-  dat$signedChangePrice[[nrow(dat)]] <- 0
-  dat <- dat %>%
-    tidyr::unnest() %>%
-    tibble::as_tibble() %>%
-    dplyr::mutate(date = lubridate::ymd(lubridate::ymd_hms(candleDateTime)),
-                  index=toupper(gsub("IDX\\.UPBIT\\.","",code)),
-                  open=openingPrice,
-                  high=highPrice,
-                  low=lowPrice,
-                  close=tradePrice
-                  ) %>%
-    dplyr::select(index,
-                  date,
-                  open,
-                  high,
-                  low,
-                  close)
-  dat <- period(dat,from,to)
+  dat <- httr::GET(tar) %>%
+    httr::content() %>%
+    do.call(rbind, .) %>%
+    data.frame %>%
+    dplyr::select(candleDateTime,
+                  code,
+                  openingPrice,
+                  highPrice,
+                  lowPrice,
+                  tradePrice) %>%
+    lapply(unlist) %>%
+    dplyr::bind_cols() %>%
+    dplyr::transmute(
+      index = toupper(gsub("IDX\\.UPBIT\\.", "", code)),
+      date = lubridate::ymd(lubridate::ymd_hms(candleDateTime)),
+      open = openingPrice,
+      high = highPrice,
+      low = lowPrice,
+      close = tradePrice
+    )
+
+  dat <- period(dat, from, to)
   return(dat)
 }

@@ -7,10 +7,10 @@
 #' @param code coin name fom ubci_get_options() link "UPBIT.KRW-BTC".
 #' @param from Optional for various time series.
 #'   A character string representing a start date in
-#'   YYYY-MM-DD format.
+#'   YYYY-MM-DD format. Default is 2000-01-01.
 #' @param to Optional for various time series.
 #'   A character string representing an end date in
-#'   YYYY-MM-DD format.
+#'   YYYY-MM-DD format. Default is system date today.
 #'
 #' @return Return type is tibble has columes contain code, date, open, high, low, close, volume.
 #'
@@ -30,17 +30,16 @@
 #' @importFrom lubridate ymd_hms ymd
 #' @importFrom dplyr mutate
 
-ubci_get <- function(code, from, to) {
-  . <- NULL
-  candleDateTime <- NULL
-  openingPrice <- NULL
-  highPrice <- NULL
-  lowPrice <- NULL
-  tradePrice <- NULL
-  candleAccTradeVolume <- NULL
-  high <- NULL
-  low <- NULL
-  volume <- NULL
+ubci_get <- function(code,
+                     from,
+                     # = "2000-01-01",
+                     #  = as.character(Sys.Date())
+                     to) {
+  candleDateTime <- openingPrice <-
+    highPrice <- lowPrice <- tradePrice <-
+    candleAccTradeVolume <- high <- low <-
+    volume <- NULL
+
   index <- toupper(gsub("CRIX\\.", "", code))
   tar <-
     paste0(
@@ -49,7 +48,9 @@ ubci_get <- function(code, from, to) {
       "&count=10000"
     )
 
-  dat <- httr::GET(tar) %>% httr::content()
+  dat <- httr::GET(tar) %>%
+    httr::content()
+
   if (!is.null(dat$error)) {
     stop(
       paste0(
@@ -58,29 +59,21 @@ ubci_get <- function(code, from, to) {
       )
     )
   }
-  dat <- dat %>%
-    do.call(rbind, .) %>%
+  dat <- do.call(rbind, dat) %>%
     data.frame %>%
     dplyr::select(1:8) %>%
     tidyr::unnest() %>%
     tibble::as_tibble() %>%
     dplyr::transmute(
-      date = lubridate::ymd(lubridate::ymd_hms(candleDateTime)),
       code = gsub("CRIX\\.", "", code),
+      date = lubridate::ymd(lubridate::ymd_hms(candleDateTime)),
       open = openingPrice,
       high = highPrice,
       low = lowPrice,
       close = tradePrice,
       volume = candleAccTradeVolume
-    ) %>%
-    dplyr::select(code,
-                  date,
-                  open,
-                  high,
-                  low,
-                  close,
-                  volume)
-  dat <- period(dat,from,to)
+    )
+  dat <- period(dat, from, to)
 
   return(dat)
 }

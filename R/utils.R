@@ -1,3 +1,5 @@
+#' @importFrom dplyr filter
+
 period <- function(dat, from, to) {
   if (missing(from)) {
     from <- lubridate::ymd("2000-01-01")

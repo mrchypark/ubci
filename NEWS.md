@@ -1,3 +1,8 @@
+## ubci 0.0.3
+
+* Fix bugs from `tidyr::unnest()`.
+
+
 ## ubci 0.0.2
 
 * Add assigning some variables first as *NULL*.

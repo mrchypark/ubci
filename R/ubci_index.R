@@ -43,7 +43,7 @@ ubci_index <- function(index = "UBMI",
   dat <- httr::GET(tar) %>%
     httr::content() %>%
     do.call(rbind, .) %>%
-    data.frame %>%
+    data.frame() %>%
     dplyr::select(candleDateTime,
                   code,
                   openingPrice,

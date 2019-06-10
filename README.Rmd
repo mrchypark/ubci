@@ -39,7 +39,8 @@ install.packages("ubci")
 You can install the development version of ubci from [GitHub](https://github.com/mrchypark/ubci) with:
 
 ```
-source("https://install-github.me/mrchypark/ubci")
+install.packages("remotes")
+remotes::install_github("mrchypark/ubci")
 ```
 
 please check encoding UTF-8 for unix-like os.
@@ -74,9 +75,9 @@ ubci_index_options(lang="ko")
 loi<-ubci_index_options()
 loi$index[1]
 ubci_index(loi$index[1])
-tail(ubci_index(loi$index[1], from="2018-05-15"))
-ubci_index(loi$index[1], to="2018-05-15")
-ubci_index(loi$index[1], from="2018-05-10", to="2018-05-15")
+tail(ubci_index(loi$index[1], from="2019-05-15"))
+ubci_index(loi$index[1], to="2019-05-15")
+ubci_index(loi$index[1], from="2019-05-10", to="2019-05-15")
 ```
 
 ### crypto price options
@@ -102,9 +103,9 @@ ubci_get_options(lang="ko")
 loc<-ubci_get_options()
 loc$code[1]
 ubci_get(loc$code[1])
-tail(ubci_get(loc$code[1], from="2018-05-15"))
-ubci_get(loc$code[1], to="2018-05-15")
-ubci_get(loc$code[1], from="2018-05-10", to="2018-05-15")
+tail(ubci_get(loc$code[1], from="2019-05-15"))
+ubci_get(loc$code[1], to="2019-05-15")
+ubci_get(loc$code[1], from="2019-05-10", to="2019-05-15")
 ```
 
 Session info is below.
@@ -120,7 +121,5 @@ Copyright 2018 두나무(주) All rights reserved.
 Powered by 두나무/Upbit
 ```
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-By participating in this project you agree to abide by its terms.
 
 [upbit]: https://www.ubcindex.com/home

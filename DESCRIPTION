@@ -16,9 +16,8 @@ LazyData: true
 ByteCompile: true
 URL: https://github.com/mrchypark/ubci
 BugReports: https://github.com/mrchypark/ubci/issues
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Imports: 
-    xml2,
     httr,
     lubridate,
     tibble,

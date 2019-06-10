@@ -7,9 +7,9 @@
 \title{ubci: Get Cryptocurrency Related Data by Upbit}
 \description{
 Get 'UBCI' & Price from 'Upbit'.
-'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
-The 'upbit' is one of the cryptocurrency exchange in Korea. The 'ubci' package is a wrapper around the ticker
-information and 'ubci' API supplied by 'upbit'.
+     'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
+     The 'upbit' is one of the cryptocurrency exchange in Korea. The 'ubci' package is a wrapper around the ticker
+     information and 'ubci' API supplied by 'upbit'.
 }
 \seealso{
 Useful links:
@@ -20,7 +20,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Chanyub Park \email{mrchypark@gmail.com}
+\strong{Maintainer}: Chanyub Park \email{mrchypark@gmail.com} (0000-0001-6474-2570)
 
 }
 \keyword{internal}

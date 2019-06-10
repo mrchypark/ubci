@@ -28,12 +28,12 @@ test_that("index check 3", {
 })
 
 test_that("date check from", {
-  chk <- tail(ubci_index("UBAI", from = "2018-05-01"),1)$date
-  expect_equal(chk, as.Date("2018-05-01"))
+  chk <- tail(ubci_index("UBAI", from = Sys.Date()-5),1)$date
+  expect_equal(chk, Sys.Date()-5)
 })
 
 test_that("date check to", {
-  chk <- head(ubci_index("UBAI", to = "2018-05-01"),1)$date
-  expect_equal(chk, as.Date("2018-05-01"))
+  chk <- head(ubci_index("UBAI", to = Sys.Date()-2),1)$date
+  expect_equal(chk, Sys.Date()-2)
 })
 

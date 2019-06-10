@@ -1,5 +1,5 @@
 Package: ubci
-Version: 0.0.4
+Version: 0.0.5
 Title: Get Cryptocurrency Related Data by Upbit
 Description: Get 'UBCI' & Price from 'Upbit'.
      'ubci' is the abbreviation of 'UpBit Crypto Index' and is the name of the index provided by 'upbit'.
